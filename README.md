@@ -1,4 +1,3 @@
-```markdown
 # Large Model Enhanced Multimodal Representations (LMEMR)
 
 **LMEMR** is a novel framework for accurately predicting fine-grained urban mobility patterns using only static geospatial data. By leveraging large vision-language models and advanced multimodal learning, LMEMR offers a scalable, privacy-friendly solution for smart city applications.
