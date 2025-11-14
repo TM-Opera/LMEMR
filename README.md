@@ -12,9 +12,11 @@ This study proposes the **Large Model Enhanced Multimodal Representations (LMEMR
 - Street view imagery 
 - Points of interest (POI)
 
-## Key Features
+## FrameWork
 
 ![FrameWork](picture/framework.png)
+
+## Key Features
 
 ### 🌐 **Static Data Driven**
 Predicts dynamic mobility without requiring real-time tracking or personal data, ensuring user privacy and enabling broader deployment.
@@ -51,7 +53,7 @@ See the [model/](model/) directory for full implementation details.
 
 ```
 project-root/
-├── data/
+├── data/region_ID/
 │   ├── ID_Building.png
 │   ├── ID_RSI.png
 │   ├── ID_POI.csv
