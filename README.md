@@ -75,16 +75,7 @@ If you find this work useful in your research, please cite:
 @article{lmemr2025,
   title={Large Model Enhanced Multimodal Representations for Fine-Grained Urban Mobility Prediction},
   author={Author, A. and Author, B.},
-  journal={Journal of Urban Informatics},
+  journal={xx},
   year={2025}
 }
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-> **Note**: This README is based on the research paper abstract and associated code structure. For detailed implementation, refer to the source files.
 ```
