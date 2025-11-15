@@ -2,7 +2,7 @@
 
 **LMEMR** is a novel framework for accurately predicting fine-grained urban mobility patterns using only static geospatial data. By leveraging large vision-language models and advanced multimodal learning, LMEMR offers a scalable, privacy-friendly solution for smart city applications.
 
-## Overview
+## 🔍 Overview
 
 Accurately predicting fine-grained urban mobility is essential for optimizing transportation, accessibility, and urban management. However, existing approaches often depend on high-cost, privacy-sensitive dynamic data such as trajectories or signaling records, limiting their scalability and cross-city applicability.
 
@@ -12,11 +12,11 @@ This study proposes the **Large Model Enhanced Multimodal Representations (LMEMR
 - Street view imagery 
 - Points of interest (POI)
 
-## FrameWork
+## 🤖 FrameWork
 
 ![FrameWork](picture/framework.png)
 
-## Key Features
+## ⚙️ Key Features
 
 ### 🌐 **Static Data Driven**
 Predicts dynamic mobility without requiring real-time tracking or personal data, ensuring user privacy and enabling broader deployment.
@@ -32,7 +32,7 @@ Aligns features both within and across modalities through a dual-level contrasti
 - **Temporal Dynamics**: Captured using a Transformer encoder to generate 24-hour mobility sequences.
 
 
-## Applications
+## 🔧 Applications
 
 LMEMR enables effective urban planning and management in scenarios where dynamic data is unavailable or restricted, offering an interpretable and transferable solution for:
 - Traffic forecasting
@@ -40,7 +40,7 @@ LMEMR enables effective urban planning and management in scenarios where dynamic
 - Urban accessibility analysis
 - Smart infrastructure planning
 
-## Getting Started
+## 🚀 Getting Started
 
 To use this framework:
 1. Organize your static geospatial data (RSI, building footprints, street views, POIs) by region.
@@ -49,7 +49,7 @@ To use this framework:
 
 See the [model/](model/) directory for full implementation details.
 
-## Repository Structure
+## 📂 Repository Structure
 
 ```
 project-root/
@@ -67,7 +67,7 @@ project-root/
     └── ...
 ```
 
-## Citation
+## 🔖 Citation
 
 If you find this work useful in your research, please cite:
 
