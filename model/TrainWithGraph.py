@@ -322,11 +322,16 @@ def train_modelwithGAT(model, full_loader, config):
         y_true_t = train_y_reg_flat.cpu().numpy()           # [3157*24]
         y_pred_t = train_reg_preds_flat.detach().cpu().numpy()    # [3157*24]
 
-        train_r2 = r2_score(y_true_t, y_pred_t)
-        train_mae = mean_absolute_error(y_true_t, y_pred_t)
-
+        
         y_true_filtered = (processor.inverse_transform(y_true_t))      # Inverse transform & filter
         y_pred_filtered = (processor.inverse_transform(y_pred_t))
+
+        y_true_denorm = processor.inverse_transform(y_true_t, type='original')
+        y_pred_denorm = processor.inverse_transform(y_pred_t, type='original')
+
+        train_r2 = r2_score(y_true_t, y_pred_t)
+        train_mae = mean_absolute_error(y_true_denorm, y_pred_denorm)
+
         mask_zero = y_true_filtered > 0.1         # Filter out samples with true value == 0 
         y_true_filtered = y_true_filtered[mask_zero]
         y_pred_filtered = y_pred_filtered[mask_zero]
@@ -378,12 +383,16 @@ def train_modelwithGAT(model, full_loader, config):
             # Regression metrics
             y_true_v = val_y_reg_flat.cpu().numpy()
             y_pred_v = val_reg_preds_flat.cpu().numpy() 
+
+            y_true_denorm = processor.inverse_transform(y_true_t, type='original')
+            y_pred_denorm = processor.inverse_transform(y_pred_t, type='original')
+        
             val_r2 = r2_score(y_true_v, y_pred_v)
-            val_mae = mean_absolute_error(y_true_v, y_pred_v)
+            val_mae = mean_absolute_error(y_true_denorm, y_pred_denorm)
             
             # Filter out samples with true value == 0
             y_true_filtered = (processor.inverse_transform(y_true_v))     # Inverse transform & filter
-            y_pred_filtered = (processor.inverse_transform(y_pred_v))     # Inverse transform & filter
+            y_pred_filtered = (processor.inverse_transform(y_pred_v))     
             mask_zero = y_true_filtered > 0.1                 # Filter out zero-valued samples
             y_true_filtered = y_true_filtered[mask_zero]
             y_pred_filtered = y_pred_filtered[mask_zero]
