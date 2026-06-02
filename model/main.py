@@ -9,7 +9,7 @@ from DataSet import FlowDataset
 # Data path
 root_dir = ''   # Set your data root directory here
 num_bins = 10
-
+ 
 # Create dataset
 dataset = FlowDataset(root_dir, fit_processor=True, num_bins=num_bins) 
 processor = dataset.get_processor()
