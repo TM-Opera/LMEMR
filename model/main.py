@@ -26,7 +26,7 @@ full_loader = DataLoader(
 # LMEMR Configuration
 config = {
     'device': torch.device('cuda'),                     # Device for training
-    'epochs': 300,                                      # Total number of training epochs
+    'epochs': 400,                                      # Total number of training epochs
     'lr': 1e-4,                                         # Learning rate
     'save_path': 'LMEMR.pth',                           # Path to save the best model
     'bin_centers': process_value['bin'],                # Bin centers for regression-to-classification conversion
