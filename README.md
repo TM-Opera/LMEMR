@@ -40,14 +40,6 @@ LMEMR enables effective urban planning and management in scenarios where dynamic
 - Urban accessibility analysis
 - Smart infrastructure planning
 
-## 🚀 Getting Started
-
-To use this framework:
-1. Organize your static geospatial data (RSI, building footprints, street views, POIs) by region.
-2. Extract multimodal features and generate textual descriptions using VLMs/LLMs.
-3. Train the model using `TrainWithGraph.py` and `main.py`.
-
-See the [model/](model/) directory for full implementation details.
 
 ## 📂 Repository Structure
 
@@ -63,19 +55,71 @@ project-root/
     ├── GATNetwork.py
     ├── Multimodal_Semantic_Enhancer.py
     ├── TrainWithGraph.py
-    ├── main.py
     └── ...
 ```
 
+## 🚀 Running
+
+### Requirements
+
+- Python >= 3.7
+- PyTorch >= 1.10
+- CUDA
+
+### Quick Start
+
+```bash
+python main.py --root_dir /path/to/your/data
+```
+
+### View All Parameters
+
+```bash
+python main.py --help
+```
+
+### Common Parameter Examples
+
+```bash
+# Custom training parameters
+python main.py --root_dir ./data --epochs 500 --lr 0.001
+
+# Use only specific modalities (disable text and SVIS)
+python main.py --root_dir ./data --no_text --no_svis
+
+# CPU training
+python main.py --root_dir ./data --device cpu
+
+# Custom output paths
+python main.py --root_dir ./data \
+    --save_path ./output/my_model.pth \
+    --metrics_save_path ./output/my_metrics.npz \
+    --confusion_matrix_path ./output/my_matrix.npz
+```
+
+### Output Files
+
+- `model.pth` - Trained model weights
+- `metrics.npz` - Training metrics (accuracy, F1, etc.)
+- `matrix.npz` - Confusion matrix
+
+
 ## 🔖 Citation
 
-If you find this work useful in your research, please cite:
+A paper about the work was published in IEEE Transactions on Intelligent Transportation Systems.
+
+If you like this work and would like to use it in a scientific context, please cite this article.
 
 ```bibtex
-@article{lmemr2025,
-  title={Large Model Enhanced Multimodal Representations for Fine-Grained Urban Mobility Prediction},
-  author={Author, A. and Author, B.},
-  journal={xx},
-  year={2025}
-}
+@ARTICLE{11540094,
+  author={Zhao, Tianhong and Li, Jianbin and Cao, Jinzhou and Tu, Wei and Biljecki, Filip and Yi, Shengao and Yuan, Zhilu},
+  journal={IEEE Transactions on Intelligent Transportation Systems}, 
+  title={Learning Fine-Grained Urban Mobility Dynamics Through Large Model-Enhanced Multimodal Representations}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-15},
+  keywords={Modeling;Urban areas;Learning (artificial intelligence);Fluid flow;Dynamics;Modules (abstract algebra);Semantics;Buildings;Educational institutions;Transformers;Urban mobility prediction;multimodal learning;vision–language models;contrastive learning;graph attention networks},
+  doi={10.1109/TITS.2026.3696956}}
+
 ```
